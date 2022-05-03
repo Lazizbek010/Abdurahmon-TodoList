@@ -1,0 +1,145 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #f3f3f3;
+    padding-top: 20px;
+}
+.to-do  {
+}
+.to-do .to-do__form  {
+    display: flex;
+    width: 100%;
+}
+.to-do .to-do__form .to-do__form__label .to-do__form__label__input  {
+    height: 50px;
+    border-radius: 6px;
+    border: 1px solid lightgray;
+    margin-right: 20px;
+    font-size: 18px;
+    padding: 0 15px;
+}
+.to-do .to-do__form .to-do__form__label .to-do__form__label__input-error  {
+    border: 1px solid red;
+}
+.to-do .to-do__form .to-do__form__label  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.to-do .to-do__form .to-do__form__label .to-do__form__label__error  {
+    border: 1px solid red;
+}
+.to-do .to-do__form .to-do__form__button  {
+    height: 50px;
+    color: white;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    white-space: nowrap;
+    padding: 0 15px;
+    background: cadetblue;
+    cursor: pointer;
+}
+.to-do .to-do__form .to-do__form__label .to-do__form__label__error-message  {
+    font-size: 14px;
+    color: red;
+    opacity: 0;
+    display: inline-block;
+    height: 14px;
+}
+.to-do .to-do__form .to-do__form__label .to-do__form__error  {
+    animation: anim .3s;
+    opacity: 1;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(-6px);
+    }
+    30% {
+        transform: translateX(0);
+    }
+    60% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* body */
+
+.to-do .to-do__list  {
+    list-style: none;
+    padding: 0;
+}
+
+.to-do .to-do__list .to-do__list__item  {
+    padding: 15px 20px;
+    border: 1px solid lightgray;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: "Roboto Light", sans-serif;
+    color: darkslategrey;
+    justify-content: space-between;
+    background: white;
+}
+
+.to-do .to-do__list .to-do__list__item img {
+    cursor: pointer;
+}
+
+
+
+/* popup */
+
+.to-do .to-do__edit-popup {
+    padding: 0 20px 20px 20px;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    width: 960px;
+    top: -5000px;
+    z-index: -1;
+}
+.to-do .to-do__edit-popup.open-popup {
+    z-index: 2;
+    transition: .5s all;
+    transform: translateY(0);
+    top: 250px;
+}
+.to-do .to-do__edit-popup .to-do__edit-popup__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-family: "Roboto Light", sans-serif;
+}
+.to-do .to-do__shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .3);
+    z-index: -1;
+}
+.to-do .to-do__shadow.open-shadow {
+    z-index: 1;
+    transition: .5s all;
+}

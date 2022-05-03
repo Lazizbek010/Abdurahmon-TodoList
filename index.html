@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="main">
+    <div class="to-do container">
+        <form class="to-do__form" onsubmit="createList(event, 'create-input', 'error-message')">
+<!--            List yaratadigan forma  -->
+            <label for="create-input" class="to-do__form__label">
+                <input
+                        placeholder="Matinni kiriting..."
+                        type="text"
+                        id="create-input"
+                        class="to-do__form__label__input"
+                        oninput="isValidate(event, 'create-input', 'error-message')"
+                >
+                <span id="error-message" class="to-do__form__label__error-message"></span>
+            </label>
+            <button type="submit" class="to-do__form__button">List qo'shish</button>
+        </form>
+
+        <ul id="parent-list" class="to-do__list">
+            <!-- Listlar ro'yhati shu yerga qo'shiladi   -->
+        </ul>
+
+
+        <div class="to-do__edit-popup" id="popup">
+            <div class="to-do__edit-popup__header">
+                <h3>Listni o'zgartirish</h3>
+                <img style="cursor: pointer" width="20" onclick="closePopup()" src="./img/close.svg" alt="">
+            </div>
+            <form class="to-do__form" onsubmit="submitEdit(event, 'edit-input', 'error-message-edit')">
+<!--                List o'zgartiradigan forma  -->
+                <label for="create-input" class="to-do__form__label">
+                    <input
+                            placeholder="typing..."
+                            type="text"
+                            id="edit-input"
+                            class="to-do__form__label__input"
+                            oninput="isValidate(event, 'edit-input', 'error-message-edit')"
+                    >
+                    <span id="error-message-edit" class="to-do__form__label__error-message"></span>
+                </label>
+                <button type="submit" class="to-do__form__button">O'zgartirish</button>
+            </form>
+        </div>
+        <span class="to-do__shadow" id="shadow" onclick="closePopup()"></span>
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
